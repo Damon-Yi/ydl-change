@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#article_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="article_wrapper">
+        <div>
+            <img class="index_banner" src="images/banner_0.png" alt="">
+            <a class="index_nav" href="乐业计划.html">
+                <div class="index_nav_col_0"><img class="index_nav_img" src="images/h_0.png" alt=""></div>
+                <div class="index_nav_col_1">
+                    <p class="index_nav_title_0 loan">乐业分期</p>
+                    <p class="index_nav_title_1">纯信用，无抵押，额度高达30万</p>
+                </div>
+            </a>
+            <a class="index_nav" href="申请家庭大宗消费分期.html">
+                <div class="index_nav_col_0"><img class="index_nav_img" src="images/h_1.png" alt=""></div>
+                <div class="index_nav_col_1">
+                    <p class="index_nav_title_0 family">家庭消费分期</p>
+                    <p class="index_nav_title_1">期限长达5年，1-3天放款</p>
+                </div>
+            </a>
+        </div>
+    </article>
+    <footer class="bottom_bar">
+        <a href="首页.html" class="b_bar_item on"><span class="b_icon b_icon_home"></span><span class="b_txt">首页</span></a>
+        <a href="个人中心.html" class="b_bar_item"><span class="b_icon b_icon_user"></span><span class="b_txt">我的</span></a>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>

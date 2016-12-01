@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#article_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="article_wrapper">
+        <div>
+            <a href="个人信息.html" class="action_row">
+                <div class="img_wrap"><img class="person_icon" src="images/personal_center.png" alt=""></div>
+                <div>
+                    <p class="p_phone">138****5117</p>
+                    <p class="p_name">深圳市忍忍科技有限公司</p>
+                </div>
+                <span class="right_arrow"></span>
+            </a>
+            <a href="javascript:;" class="action_row">
+                <div class="img_wrap "><img class="action_icon" src="images/p_loan.png" alt=""></div>
+                <div><p>借款记录</p></div>
+                <span class="right_arrow"></span>
+            </a>
+            <a href="还款计划.html" class="action_row">
+                <div class="img_wrap"><img class="action_icon" src="images/p_payment.png" alt=""></div>
+                <div><p>还款计划</p></div>
+                <span class="right_arrow"></span>
+            </a>
+            <a href="javascript:;" class="action_row">
+                <div class="img_wrap"><img class="action_icon" src="images/p_winning_record.png" alt=""></div>
+                <div><p class="action_new_mark">中奖记录</p></div>
+                <span class="right_arrow"></span>
+            </a>
+        </div>
+    </article>
+    <footer class="bottom_bar">
+        <a href="首页.html" class="b_bar_item"><span class="b_icon b_icon_home"></span><span class="b_txt">首页</span></a>
+        <a href="个人中心.html" class="b_bar_item on"><span class="b_icon b_icon_user b_new"></span><span class="b_txt">我的</span></a>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>

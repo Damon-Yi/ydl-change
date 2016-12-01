@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>申请借款</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <div class="section aply_result txt_center">
+                <img class="aply_img" src="images/cal_fail.png" alt="">
+                <p>经过系统审核，您不符合借款要求。</p>
+            </div>
+            <div class="section aply_result_fail">
+                <p class="p_under_line">借款金额：20000元</p>
+                <p class="p_under_line">借款期限：12期</p>
+                <p class="p_under_line">申请时间：2016-11-01</p>
+            </div>
+            <a href="javascript:history.go(-1);" class="link_btn">返回</a>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>

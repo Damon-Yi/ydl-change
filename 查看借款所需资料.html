@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>额度测算</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="plugin/weui/weui.min.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <form action="#" class="cal_form">
+                <p class="form_p_title">身份信息</p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/id-front.png;/images/material/id-back.png'><span class="action_p_txt">二代身份证正面和反面</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">财力信息</p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/bank1.jpg'><span class="action_p_txt">最近6个月发放工资的银行流水明细</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">住址信息<span>(以下8选1即可)</span></p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/property.jpg'><span class="action_p_txt">房产证/购房合同/有效期内正规有盖章的租赁合同</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/credit-bill.png'><span class="action_p_txt">近2个月内银行机构提供的信用卡账单/还款凭单</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/electricity-fees.png'><span class="action_p_txt">近2个月内的水电费清单/燃气费/物业费发票</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">工作信息</p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/labor-contract-1.png;/images/material/labor-contract-2.png;/images/material/labor-contract-3.png'><span class="action_p_txt">与公司签订的劳动合同</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/social-security.png'><span class="action_p_txt">参保信息截图</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">现场申请照</p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/ap+ID.png'><span class="action_p_txt">申请人手持申请表+身份证原件照片</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/credit-authorization+Id.png'><span class="action_p_txt">申请人手持征信查询授权书+身份证原件照片</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">辅助资料<span>（如有可提供）</span></p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/family-register-1.png'><span class="action_p_txt">户口本</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/marriage-certificate.png'><span class="action_p_txt">结婚证</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/income-certification.jpg'><span class="action_p_txt">公司统一提供的财务对帐信息</span><span class="right_arrow"></span></p>
+                </div>
+                <p class="form_p_title">其它补充信息<span>(金额超过20万需要提供3选1的财力证明)</span></p>
+                <div class="action_p_wrap">
+                    <p class="action_p" img-src='/images/material/driving-license.png'><span class="action_p_txt">车辆行驶证</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/property-certificate.png'><span class="action_p_txt">房产证明</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/stock-account.png'><span class="action_p_txt">股票账户信息</span><span class="right_arrow"></span></p>
+                </div>
+                <a href="javascript:;" class="link_btn">申请借款</a>
+            </form>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>

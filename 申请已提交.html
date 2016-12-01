@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>申请借款</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <div class="aply_submit txt_center">
+                <p class="s_line_1">申请借款金额</p>
+                <p class="s_line_2"><span>20</span><span>万</span></p>
+                <p class="s_line_3">您的申请已提交，请等待审核。</p>
+                <p class="s_line_4">实际放款金额以最终审批结果为准！</p>
+            </div>
+            <a href="javascript:history.go(-1);" class="link_btn">返回</a>
+            <a href="个人中心.html" class="link_btn_blank">个人中心</a>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+    <style>
+        .form_section{margin: 0 0 0.24rem;}
+    </style>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <form action="#" class="register_form">
+                <div class="form_section">
+                    <div class="form_row">
+                        <div class="form_col_0">所属企业</div>
+                        <div class="form_col_1"><span class="company_name">请选择所属企业</span></div>
+                        <span class="right_arrow"></span>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_col_0">手机号码</div>
+                        <div class="form_col_1"><input type="tel" placeholder="请填写手机号"></div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_col_0">密码</div>
+                        <div class="form_col_1"><input type="password" class="psd" placeholder="请填写密码"></div>
+                        <span class="eye_icon"></span>
+                    </div>
+                </div>
+                <a href="javascript:;" class="link_btn">同意协议并注册</a>
+            </form>
+            <div class="cont_bottom">
+                <a href="javascript:;">用户协议</a>
+            </div>
+        </div>
+    </article>
+    <script>
+        $(function(){
+            $('.eye_icon').on('tap',function(){
+                $(this).toggleClass('on');
+                var psdInput = $(this).parents('.form_row').find('.psd');
+                if($(this).hasClass('on')){
+                    psdInput.attr('type','text');
+                }else{
+                    psdInput.attr('type','password');
+                }
+            });
+        })
+    </script>
+</body>
+</html>

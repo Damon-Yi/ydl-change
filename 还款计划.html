@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#article_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="article_wrapper">
+        <div>
+            <div class="payment_records">
+                <div class="p_item p_family">
+                    <div class="p_row_1"><span class="p_title">家庭大宗消费</span><span class="p_mark">员动力</span></div>
+                    <div class="p_row_2">
+                        <div class="p_col_1 txt_left">
+                            <p><span>100,068.66</span>元</p>
+                            <p>待还款总额</p>
+                        </div>
+                        <div class="p_col_2 txt_center">
+                            <p><span>12</span>期</p>
+                            <p>待还期数</p>
+                        </div>
+                        <div class="p_col_3 txt_right">
+                            <p><span>12</span>期</p>
+                            <p>已还期数</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p_item p_leye">
+                    <div class="p_row_1"><span class="p_title">乐业分期</span><span class="p_mark">员动力</span></div>
+                    <div class="p_row_2">
+                        <div class="p_col_1 txt_left">
+                            <p><span>100,068.66</span>元</p>
+                            <p>待还款总额</p>
+                        </div>
+                        <div class="p_col_2 txt_center">
+                            <p><span>6</span>期</p>
+                            <p>待还期数</p>
+                        </div>
+                        <div class="p_col_3 txt_right">
+                            <p><span>12</span>期</p>
+                            <p>已还期数</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>

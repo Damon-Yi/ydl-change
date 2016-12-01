@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script src="plugin/jquery/jquery-1.11.0.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <article id="body_wrapper">
+        <div>
+            <form action="#" class="register_form">
+                <div class="form_section">
+                    <div class="form_row">
+                        <div class="form_col_0">验证码</div>
+                        <div class="form_col_1"><input type="tel"></div>
+                        <input class="get_code_btn" type="button" value="获取验证码">
+                    </div>
+                </div>
+                <p class="form_p">手机验证码已经发送到<span>16422225117</span></p>
+                <a href="javascript:;" class="link_btn">完成</a>
+            </form>
+        </div>
+    </article>
+    <script>
+        $(function(){
+            $('.get_code_btn').on('click',function(){
+                var getCodeObj = getCode(this,10,function(){
+                    console.log('send...');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

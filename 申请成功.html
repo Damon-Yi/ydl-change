@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>申请借款</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <div class="cal_result section">
+                <div class="dec_sec">
+                    <p>每月还款</p>
+                    <p><span class="limit_num">187.67</span>元</p>
+                </div>
+                <div class="detail_sec">
+                    <p class="d_p">借款金额: 2,000.00元</p>
+                    <p class="d_p">借款期数: 12个月</p>
+                    <p class="d_p">月利率: 1.05%</p>
+                    <p class="d_p">还款总额: 2,252.04元</p>
+                    <div class="p_warn_tips txt_left"><img src="images/warn_tips.png" alt="">以上结果仅供参考,实际放款金额以最终审核结果为准！</div>
+                </div>
+            </div>
+            <div class="section aply_result">
+                <p>您的申请已提交，工作人员将会尽快联系您，请保持手机畅通！</p>
+            </div>
+            <a href="查看借款所需资料.html" class="link_btn">查看借款所需资料</a>
+            <a href="javascript:history.go(-1);" class="link_btn_blank">返回</a>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>
