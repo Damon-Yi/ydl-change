@@ -27,14 +27,7 @@ input[type="button"]{padding:0;}
 #article_wrapper{position: absolute;z-index: 1;top: 0;bottom:0.84rem;left: 0;width: 100%;overflow: hidden;}
 #article_wrapper>div{position: absolute;z-index: 1;-webkit-tap-highlight-color: rgba(0,0,0,0);width: 100%;-webkit-transform: translateZ(0);-moz-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-text-size-adjust: none;-moz-text-size-adjust: none;-ms-text-size-adjust: none;-o-text-size-adjust: none;text-size-adjust: none;}
 
-@-webkit-keyframes animDialog {
- from{-webkit-transform: scale(.05);transform: scale(.05);}
- to{-webkit-transform: scale(1);transform: scale(1);}
-}
-@keyframes animDialog {
-  from{-webkit-transform: scale(.05);transform: scale(.05);}
-  to{-webkit-transform: scale(1);transform: scale(1);}
-}
+
 
 /* media */
 /* 横屏 */
@@ -92,9 +85,6 @@ input[type="button"]{padding:0;}
 .loader .span_wrap span:nth-child(5) {-webkit-animation-delay: -1s;animation-delay: -1s;background: rgba(160,160,160,0.8);}
 @keyframes loader {from {transform: scale(0, 0);}to {transform: scale(1, 1);}}
 @-webkit-keyframes loader {from {-webkit-transform: scale(0, 0);}to {-webkit-transform: scale(1, 1);}}
-
-
-
 
 /*底部导航*/
 .bottom_bar{position: absolute;bottom: 0;width: 100%;background-color: #fff;color: #999;font-size: 13px;}
@@ -208,9 +198,6 @@ input[type="button"]{padding:0;}
 .aply_submit .s_line_3{color:#333;font-size: 0.3rem;margin: 0.1rem auto;}
 .aply_submit .s_line_4{font-size: 0.22rem;}
 
-/*费率*/
-.rate_form{padding: 0.24rem 0;}
-
 /*个人信息*/
 .person_sec{background-color:#fff;font-size: 0.26rem;color: #333;margin: 0.24rem 0;}
 .person_sec>p{padding-left:0.36rem;padding-right:0.36rem;}
@@ -247,7 +234,40 @@ input[type="button"]{padding:0;}
 .payment_records .p_item .p_row_2 .p_col_1{width: 42%;}
 .payment_records .p_item .p_row_2 .p_col_2{width: 33%;}
 .payment_records .p_item .p_row_2 .p_col_3{width: 25%;}
+.loan_records .p_item .p_row_2 .p_col_1{width: 33%;}
+.loan_records .p_item .p_row_2 .p_col_2{width: 33%;}
+.loan_records .p_item .p_row_2 .p_col_3{width: 34%;}
 
 /*空白*/
 .no_data{text-align: center;margin-top: 50%;}
 .no_data>img{width: 3rem;}
+
+/*费率*/
+.rate_form{padding: 0.24rem 0;}
+.layer_box{font-size: #333;font-size: 0.22rem;width: 82%;margin: 0 auto;position: relative;display: none;}
+.layer_box .layer_row_1{background-color: #fdf3d1;padding: 0.84rem 0.4rem 0.5rem;overflow: auto;font-size: 0.2rem;text-align: left;}
+.layer_box .layer_row_1 .layer_col{width: 50%;float: left;position: relative;}
+.layer_box .layer_row_1 .layer_col:after{content:'';display:block;position: absolute;top:0;right: 0;height: 100%;/*background-color: #b2b2b2;height: 1px;*/transform: scaleX(0.5);-webkit-transform: scaleX(0.5);border-right: 1px solid #b2b2b2;}
+.layer_box .layer_row_1 .layer_col:last-child:after{display: none;}
+.layer_box .layer_row_1 .layer_col>div>p:last-child{color: #4285f4;}
+.layer_box .layer_row_1 .layer_col_right{}
+.layer_box .layer_row_1 .layer_col_right>div{float: right}
+.layer_box .big_num{font-size: 0.36rem;margin-right:0.04rem;}
+.layer_box .layer_row_2{background-color: #fff;padding: 0.08rem 0.16rem 0.26rem;}
+.layer_box .p_warn_tips{font-size: 0.18rem;margin-bottom:0.1rem;}
+.layer_box .p_warn_tips>img{width: 0.24rem;height: 0.24rem;}
+.layer_box .close_btn{width: 0.44rem;height: 0.44rem;background: url(../images/close-btn0.png) no-repeat center center;position: absolute;top: 0.16rem;right: 0.14rem;background-size: 80%;}
+
+/*弹窗*/
+.layer_container{position: fixed;top: 0;left: 0;z-index: 100;display: table;height: 100%;width: 100%;}
+.layer_container .bg{position: absolute;top: 0;left: 0;right: 0;bottom:0;background: rgba(0,0,0,.6);}
+.layer_container .layer_cont_wrap{display: table-cell;text-align: center;vertical-align: middle;}
+.layer_container .layer_cont{display:block;-webkit-animation: animLayer .4s ease-out;animation: animLayer .4s ease-out;}
+@-webkit-keyframes animLayer {
+ from{-webkit-transform: scale(.05);transform: scale(.05);}
+ to{-webkit-transform: scale(1);transform: scale(1);}
+}
+@keyframes animLayer {
+  from{-webkit-transform: scale(.05);transform: scale(.05);}
+  to{-webkit-transform: scale(1);transform: scale(1);}
+}

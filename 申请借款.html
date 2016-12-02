@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>申请家庭大宗消费分期</title>
+    <title>申请借款</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="format-detection" content="telephone=no" />
     <link href="css/public.css" rel="stylesheet" type="text/css">
@@ -31,22 +31,14 @@
     <article id="body_wrapper">
         <div>
             <form action="#" class="cal_form">
-                <p class="form_p_tip">请填写真实材料，虚假信息可能会记入行业黑名单！</p>
+                <p class="form_p_title">请填写企业信息</p>
                 <div class="form_section">
                     <div class="form_row">
-                        <div class="form_col_0">借款人</div>
-                        <div class="form_col_1"><input type="text" placeholder="请填写借款人姓名"></div>
+                        <div class="form_col_0">企业名称</div>
+                        <div class="form_col_1"><input type="text" placeholder="请填写企业名称"></div>
                     </div>
                     <div class="form_row">
-                        <div class="form_col_0">身份证</div>
-                        <div class="form_col_1"><input type="text" placeholder="请填写借款人身份证号"></div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_col_0">职业</div>
-                        <div class="form_col_1"><input type="text" placeholder="请选择"></div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_col_0">城市</div>
+                        <div class="form_col_0">所在城市</div>
                         <div class="form_col_1">
                             <select class="weui_select" id="periods" name="periods">
                                 <option selected="" value="">请选择</option>
@@ -61,16 +53,34 @@
                         <span class="right_down"></span>
                     </div>
                     <div class="form_row">
-                        <div class="form_col_0">申请金额</div>
-                        <div class="form_col_1"><input type="text" placeholder="最低2万，最高1000万"></div>
-                        <span class="right_txt">万元</span>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_col_0">推荐人</div>
-                        <div class="form_col_1"><input type="text" placeholder="请填写推荐人手机号码（选填）"></div>
+                        <div class="form_col_0">详细地址</div>
+                        <div class="form_col_1"><input type="text" placeholder="请填写身份证号码"></div>
                     </div>
                 </div>
-                <a href="javascript:;" class="link_btn">提交申请</a>
+                <p class="form_p_title">请填写借款信息</p>
+                <div class="form_section">
+                    <div class="form_row">
+                        <div class="form_col_0">借款金额</div>
+                        <div class="form_col_1"><input type="text" placeholder="最高15"></div>
+                        <span class="right_txt">元</span>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_col_0">借款期数</div>
+                        <div class="form_col_1">
+                            <select class="weui_select" id="periods" name="periods">
+                                <option selected="" value="">请选择</option>
+                                <option value="6">6期</option>
+                                <option value="12">12期</option>
+                                <option value="18">18期</option>
+                                <option value="24">24期</option>
+                                <option value="30">30期</option>
+                                <option value="36">36期</option>
+                            </select>
+                        </div>
+                        <span class="right_down"></span>
+                    </div>
+                </div>
+                <a href="额度测算结果.html" class="link_btn">提交</a>
             </form>
         </div>
     </article>

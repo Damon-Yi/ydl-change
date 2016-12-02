@@ -14,6 +14,66 @@ new function (){
 };
 
 
+
+
+/*common layer template*/
+var myLayer = function(params){
+    var me = {};
+    me.params = params?params:{
+        'layerCont':'',
+        'hasShadowBg':false,
+        'shadowClose':false,
+        'funcs':{}
+    };
+    me.init = function(){
+        me.layerCont = $(me.params.layerCont).clone();
+        me.layerContainer = $('<div class="layer_container"></div>');
+        me.layerContWrap = $('<div class="layer_cont_wrap"></div>');
+        me.layerBg = $('<div class="bg"></div>');
+
+        me.layerContainer.append(me.layerContWrap.append(me.layerCont.addClass('layer_cont')));
+
+        if(me.params.hasShadowBg){
+            me.layerContainer.prepend(me.layerBg);
+        }
+        if(me.params.shadowClose){
+            me.layerBg.on('touchend',function(e){
+                e.preventDefault();
+                me.destory();
+            });
+        }
+        /*handle func*/
+        if(me.params.funcs){
+            for(var o in me.params.funcs){
+                me.layerContainer.find(o).on('touchend',{'func':me.params.funcs[o]},function(e){
+                    e.preventDefault();
+                    e.data.func();
+                });
+            }
+        }
+        $('body').append(me.layerContainer);
+    }
+    me.destory = function(){
+        me.layerContainer.remove();
+        me.layerCont.removeClass('layer_cont');
+    }
+    if(me.params.layerCont){
+        me.init();
+    }
+    return me;
+}
+
+/*提示，弹窗*/
+//tips('数据错误','tips_center',1500);
+//tips('数据错误','tips_left',1500);
+function tips(msg,className,time){
+    var tipsDiv = $('<div class="tips '+className+'"></div>');
+    $('body').append(tipsDiv);
+    tipsDiv.html(msg).addClass('tips_show');
+    setTimeout(function(){
+        tipsDiv.removeClass('tips_show').remove();
+    },time);
+}
 /*获取验证码 1,div*/
 function getCodefun(obj,phone,time){
     var me = {};
@@ -89,35 +149,8 @@ var getCode = function(btn,time,fn){
     return me;
 }
 
-//通用提示
-function commonTips(className,msg,time){
-    var _obj = $('.'+className);
-    _obj.text(msg);
-    _obj.addClass(className+'-show');
-    setTimeout(function(){
-        _obj.addClass(className+'-fadeout');
-    },time);
-    setTimeout(function(){
-        _obj.addClass(className+'-fadein');
-        _obj.removeClass(className+'-show');
-    },time*2);
-}
-
-/*提示，弹窗*/
-//tips('数据错误','tips_center',1500);
-//tips('数据错误','tips_left',1500);
-function tips(msg,className,time){
-    var tipsDiv = $('<div class="tips '+className+'"></div>');
-    $('body').append(tipsDiv);
-    tipsDiv.html(msg).addClass('tips_show');
-    setTimeout(function(){
-        tipsDiv.removeClass('tips_show').remove();
-    },time);
-}
-
 /*数字键盘*/
 function enterPsw($wrapper,parms){
-
     var me = {};
     var parms = parms?parms:{
         title:'支付',

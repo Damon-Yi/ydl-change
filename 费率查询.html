@@ -91,15 +91,49 @@
                         <span class="right_down"></span>
                     </div>
                 </div>
-                <a href="javascript:;" class="link_btn">查询</a>
+                <a href="javascript:;" class="link_btn rate_check">查询</a>
             </form>
         </div>
     </article>
-    <div>
-        
+    <div class="layer_box">
+        <div class="layer_row_1">
+            <div class="layer_col layer_col_left">
+                <div>
+                    <p>预计放款金额</p>
+                    <p><span class="big_num">10</span>万</p>
+                </div>
+            </div>
+            <div class="layer_col layer_col_right">
+                <div>
+                    <p>每月还款金额</p>
+                    <p><span  class="big_num">4866.67</span>元</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer_row_2">
+            <div class="p_warn_tips txt_left"><img src="images/warn_tips.png" alt=""><span>温馨提示：以上信息仅供参考，实际放款金额以最终审批结果为准！</span></div>
+            <a href="申请借款.html" class="link_btn rate_result_btn">立即申请</a>
+        </div>
+        <div class="close_btn"></div>
     </div>
     <script>
-        
+        $(function(){
+            $('.rate_check').on('tap',function(){
+                var rateLayer = new myLayer({
+                    'layerCont':'.layer_box',
+                    'hasShadowBg':true,
+                    'shadowClose':true,
+                    'funcs':{
+                        '.close_btn':function(){
+                            rateLayer.destory();
+                        },
+                        '.rate_result_btn':function(){
+                            window.location.href = '申请借款.html'; 
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

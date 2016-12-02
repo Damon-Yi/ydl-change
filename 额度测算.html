@@ -108,7 +108,7 @@
                         <span class="right_down"></span>
                     </div>
                     <div class="form_row">
-                        <div class="form_col_2">劳动合同签署期数</div>
+                        <div class="form_col_2">劳动合同<br/>签署期数</div>
                         <div class="form_col_1">
                             <select class="weui_select" id="periods" name="periods">
                                 <option value="0">请选择</option>
@@ -161,17 +161,7 @@
         </div>
     </article>
     <script>
-        $(function(){
-            $('.eye_icon').on('tap',function(){
-                $(this).toggleClass('on');
-                var psdInput = $(this).parents('.form_row').find('.psd');
-                if($(this).hasClass('on')){
-                    psdInput.attr('type','text');
-                }else{
-                    psdInput.attr('type','password');
-                }
-            });
-        })
+        
     </script>
 </body>
 </html>
