@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script type="text/javascript" src="plugin/swiper/swiper.3.1.7.min.js"></script>
+    <script src="js/common.js"></script>
+    <style>
+        body{background-color: #fff;}
+        #article_wrapper{background: url(images/in_1.png) no-repeat top center;background-size: contain;}
+        .in_top{height: 5rem;}
+        .in_top_cont{font-size: 0.32rem;color: #fff;text-align: center;}
+        .in_top_cont .in_p_1{padding-top: 0.4rem;}
+        .in_top_cont .in_p_2{font-size: 0.8rem;}
+        .in_top_cont .in_p_3{color: #0aaefd;width:3rem;height:0.8rem;display: block;margin: 0.1rem auto;text-align: center;line-height:0.8rem;background: #fff;border-radius: 30px;}
+        .ad_swiper{font-size: 0;position: relative;}
+        .ad_swiper .swiper_link{display: block;margin: 0 auto;text-align: center;}
+        .ad_swiper .ad_img{width: 6rem;height: 1.71rem;}
+        .in_table{width: 100%;margin-top: 0.5rem;}
+        .in_table td>a{display: block;width:1.5rem;height: 1.5rem;text-align: center;color: #fff;font-size: 0.26rem;border-radius:100%;margin: 0 auto;}
+        .in_table td .a_1{background-color: #f9cd4c;}
+        .in_table td .a_2{background-color: #71cde3;}
+        .in_table td .a_3{background-color: #ff8c81;}
+        .in_table td>a>img{width: 0.42rem;height: 0.42rem;margin-top: 0.3rem;}
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#article_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="article_wrapper">
+        <div>
+            <div class="in_top">
+                <div class="in_top_cont">
+                    <p class="in_p_1">可借额度</p>
+                    <p class="in_p_2">0.00</p>
+                    <a class="in_p_3" href="javascript:;">测测我能借多少？</a>
+                </div>
+            </div>
+            <div class="ad_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="http://www.baidu.com" class="swiper_link"><img class="ad_img" src="images/in_2.png" alt=""></a></div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+            <div>
+                <table class="in_table">
+                    <tr>
+                        <td>
+                            <a class="a_1" href="额度测算.html">
+                                <img src="images/in_3.png" alt="">
+                                <p>额度测算</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="a_2" href="费率查询.html">
+                                <img src="images/in_4.png" alt="">
+                                <p>费率查询</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="a_3" href="进度查询.html">
+                                <img src="images/in_5.png" alt="">
+                                <p>进度查询</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </article>
+    <footer class="bottom_bar">
+        <a href="首页.html" class="b_bar_item on"><span class="b_icon b_icon_home"></span><span class="b_txt">首页</span></a>
+        <a href="个人中心.html" class="b_bar_item"><span class="b_icon b_icon_user"></span><span class="b_txt">我的</span></a>
+    </footer>
+    <script>
+        var adSwiper = new Swiper('.ad_swiper', {
+            autoHeight: true,
+            pagination: '.swiper-pagination',
+            onClick:function(){
+                var link = $(bannerSwiper0.clickedSlide).find('.swiper-link');
+                console.log(link.attr('data-src'));
+                window.location.href = link.attr('data-src');
+            }
+        });
+    </script>
+</body>
+</html>

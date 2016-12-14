@@ -219,7 +219,8 @@ input[type="button"]{padding:0;}
 
 /*还款计划*/
 .payment_records{font-size: 0.26rem;color: #333;}
-.payment_records .p_item{margin: 0.24rem 0;background-color:#fff;padding: 0.26rem;}
+.payment_records .p_item{margin: 0.24rem 0;background-color:#fff;padding:0.26rem 0.36rem 0.26rem 0.26rem;position: relative;}
+.payment_records .p_item:after{content:"";width: 10px;height: 10px;transform: rotate(45deg);-webkit-transform: rotate(45deg);position: absolute;right:0.1rem;top: 50%;margin-top: -5px;border-width: 1px 1px 0 0;border-color: #858585;border-style: solid;}
 .payment_records .p_family{border-top: 1px solid #f2ce18;}
 .payment_records .p_leye{border-top: 1px solid #4285f4;}
 .payment_records .p_item .p_row_1{font-size: 0.22rem;}

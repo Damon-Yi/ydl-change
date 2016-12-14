@@ -57,8 +57,10 @@ var myLayer = function(params){
         me.layerContainer.remove();
         me.layerCont.removeClass('layer_cont');
     }
-    if(me.params.layerCont){
-        me.init();
+    me.show = function(){
+        if(me.params.layerCont){
+            me.init();
+        }
     }
     return me;
 }

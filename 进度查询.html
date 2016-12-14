@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>进度查询</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/public.js"></script>
+    <style>
+        .pro_top{color: #333;font-size: 0.22rem;height: 1.64rem;background-color:#fff;margin-top:0.29rem;display: flex;}
+        .pro_top .pro_top_left{width: 1.73rem;border-right: 1px solid #ebebeb;text-align: center;}
+        .pro_top .pro_top_left>img{width:0.72rem;height:0.8rem;margin-top: 0.42rem;}
+        .pro_top .pro_top_right{flex: 1;padding-left: 0.3rem;}
+        .pro_top .pro_top_right .pro_p_1{margin-top: 0.48rem;}
+        .pro_top .pro_top_right .pro_p_2{margin-top: 0.1rem;}
+
+        .pro_mid{color: #333;font-size: 0.26rem;}
+        .pro_mid .pro_mid_title{color: #999;font-size: 0.22rem;height:0.68rem;line-height: 0.68rem;padding-left:0.26rem; }
+        .pro_mid .pro_mid_cont{background-color: #fff;padding-top:0.68rem;}
+        .pro_mid .pro_steps{width: 5.2rem;margin: 0 auto;}
+        .pro_mid .pro_steps .pro_step{height: 0.89rem;width:0.8rem;border-left:1px dashed #ddd;border-top:1px dashed #ddd;position: relative;}
+        .pro_mid .pro_steps .pro_step:last-child{border-left:none;}
+        .pro_mid .pro_steps .pro_step>div{position: absolute;width: 5.2rem;height: 0.4rem;line-height: 0.4rem;top: -0.24rem;left: -0.09rem;}
+        .pro_mid .pro_steps .pro_step>div>span{display: inline-block;vertical-align: middle;}
+        .pro_mid .pro_steps .pro_step .arrow_icon{width: 0.18rem;height: 0.18rem;background: url(images/pro_13.png) no-repeat center center;background-size:100% 100%;}
+        .pro_mid .pro_steps .pro_step:last-child .arrow_icon{background-image: url(images/pro_11.png);}
+        .pro_mid .pro_steps .pro_step.on .arrow_icon{background-image: url(images/pro_12.png);}
+        .pro_mid .pro_steps .pro_step.on:last-child .arrow_icon{background-image: url(images/pro_10.png);}
+        .pro_mid .pro_steps .pro_step .step_icon{width: 0.36rem;height: 0.36rem;background-repeat:no-repeat;background-position:center center;background-size:contain;margin: 0 0.1rem 0 0.8rem;}
+        .pro_mid .pro_steps .pro_step .step_1{background-image: url(images/pro_3.png);}
+        .pro_mid .pro_steps .pro_step.on .step_1{background-image: url(images/pro_2.png);}
+        .pro_mid .pro_steps .pro_step .step_2{background-image: url(images/pro_7.png);}
+        .pro_mid .pro_steps .pro_step.on .step_2{background-image: url(images/pro_6.png);}
+        .pro_mid .pro_steps .pro_step .step_3{background-image: url(images/pro_5.png);}
+        .pro_mid .pro_steps .pro_step.on .step_3{background-image: url(images/pro_4.png);}
+        .pro_mid .pro_steps .pro_step .step_4{background-image: url(images/pro_9.png);}
+        .pro_mid .pro_steps .pro_step.on .step_4{background-image: url(images/pro_8.png);}
+        .pro_mid .pro_steps .pro_step .step_txt{}
+
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper">
+        <div>
+            <div class="pro_top">
+                <div class="pro_top_left"><img src="images/pro_1.png" alt=""></div>
+                <div class="pro_top_right">
+                    <p class="pro_p_1">借款金额：7.5W</p>
+                    <p class="pro_p_2">借款期数：18期</p>
+                </div>
+            </div>
+            <div class="pro_mid">
+                <div class="pro_mid_title">申请进度</div>
+                <div class="pro_mid_cont">
+                    <div class="pro_steps">
+                        <div class="pro_step on">
+                            <div><span class="arrow_icon"></span><span class="step_icon step_1"></span><span class="step_txt">您的借款申请已提交</span></div>
+                        </div>
+                        <div class="pro_step on">
+                            <div><span class="arrow_icon"></span><span class="step_icon step_2"></span><span class="step_txt">工作人员正在上门收集资料</span></div>
+                        </div>
+                        <div class="pro_step">
+                            <div><span class="arrow_icon"></span><span class="step_icon step_3"></span><span class="step_txt">审核中</span></div>
+                        </div>
+                        <div class="pro_step">
+                            <div><span class="arrow_icon"></span><span class="step_icon step_4"></span><span class="step_txt">完成</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>
