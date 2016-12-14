@@ -262,7 +262,7 @@ input[type="button"]{padding:0;}
 /*弹窗*/
 .layer_container{position: fixed;top: 0;left: 0;z-index: 100;display: table;height: 100%;width: 100%;}
 .layer_container .bg{position: absolute;top: 0;left: 0;right: 0;bottom:0;background: rgba(0,0,0,.6);}
-.layer_container .layer_cont_wrap{display: table-cell;text-align: center;vertical-align: middle;}
+.layer_container .layer_cont_wrap{display: table-cell;text-align: center;vertical-align: middle;width: 100%;}
 .layer_container .layer_cont{display:block;-webkit-animation: animLayer .4s ease-out;animation: animLayer .4s ease-out;}
 @-webkit-keyframes animLayer {
  from{-webkit-transform: scale(.05);transform: scale(.05);}
@@ -272,3 +272,15 @@ input[type="button"]{padding:0;}
   from{-webkit-transform: scale(.05);transform: scale(.05);}
   to{-webkit-transform: scale(1);transform: scale(1);}
 }
+
+/*注册协议*/
+.reg_rule {font-size: 0.26rem;color: #333;width: 92%;margin: 0 auto;display: none;background-color: #fff;position: relative;height: 8.6rem;text-align: left;border-radius: 2px;}
+.reg_rule>div {position: absolute;z-index: 1;top: 0;bottom: 0;left: 0;width: 100%;overflow: hidden;}
+.reg_rule>div>div {position: absolute;z-index: 1;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);width: 100%;-webkit-transform: translateZ(0);-moz-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-text-size-adjust: none;-moz-text-size-adjust: none;-ms-text-size-adjust: none;-o-text-size-adjust: none;text-size-adjust: none;}
+.reg_rule .reg_rule_cont {padding: 0 0.56rem 0.2rem;}
+.reg_rule .reg_title {font-size: 0.4rem;text-align: center;padding: 0.4rem 0 0.2rem;font-weight: bold;}
+.reg_rule .reg_txt {word-break: break-all;padding: 0 0.1rem 0.2rem 0.2rem;}
+.reg_rule .reg_txt .reg_p1 {color: #414141;margin: 0.14rem 0;}
+.reg_rule .reg_txt .reg_p2 {color: #6f6f6f;text-indent: 25px;}
+.reg_rule .reg_txt .reg_p3 {color: #6f6f6f;text-align: right;}
+.reg_rule .close_btn {width: 0.44rem;height: 0.44rem;background: url(../images/close-btn0.png) no-repeat center center;position: absolute;top: 0.26rem;right: 0.26rem;background-size: 80%;}
