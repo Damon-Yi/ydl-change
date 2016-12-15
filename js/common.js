@@ -6,4 +6,8 @@ $(function(){
             $(_that).removeClass('active');
         },200);
     });
+
+    $('.header .back_btn').on('tap',function(){
+        history.go(-1);
+    });
 });
