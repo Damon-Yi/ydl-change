@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="format-detection" content="telephone=no" />
     <link href="css/public.css" rel="stylesheet" type="text/css">
-    <link href="plugin/weui/weui.min.css" rel="stylesheet" type="text/css">
+    <link href="plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
     <script src="js/public.js"></script>
     <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
     <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
     <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script type="text/javascript" src="plugin/swiper/swiper.3.1.7.min.js"></script>
     <script src="js/common.js"></script>
     <script type="text/javascript">
         var aScroll;
@@ -26,6 +27,27 @@
         }
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     </script>
+    <style>
+        #img-swiper{position: fixed;top: 0;bottom: 0;left: 0;right: 0;background-color: rgba(0,0,0,1);z-index: 11;-webkit-animation: animDialog .3s ease-out;animation: animDialog .3s ease-out;}
+        .img-swiper{display: none;}
+        .img-swiper-show{display: block;}
+        #img-swiper .swiper-slide>img{position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);max-width: 100%;}
+        #img-swiper .silde-num{text-align: center;color: #fff;font-size: 16px;position: absolute;top: 20px;width: 100%;z-index: 2;}
+        #img-swiper .silde-num>span{margin: 0 2px;}
+        #img-swiper .exit-btn{position: absolute;top: -34px;left:20px;z-index: 3;transition:all 0.3s ease-in;-webkit-transition:all 0.6s ease;opacity: 0;width: 30px;height: 30px;}
+        #img-swiper .exit-btn-show{left: 20px;top: 15px;opacity: 1;}
+        #img-swiper .exit-btn:before{content:"";position: absolute;width: 20px;height: 20px;border-radius: 100%;border:1px solid #c8c8cd;top: 50%;right:50%;margin-top: -11px;margin-right: -11px;}
+        #img-swiper .exit-btn:after{content:"";-webkit-transform: rotate(45deg);transform: rotate(45deg);height: 6px;width: 6px;border-width: 0 0 2px 2px;border-color: #c8c8cd;border-style: solid;position: relative;top: -2px;position: absolute;top: 50%;right:50%;margin-top: -4px;margin-right: -5px;}
+
+        @-webkit-keyframes animDialog {
+            from{-webkit-transform: scale(.05);transform: scale(.05);}
+            to{-webkit-transform: scale(1);transform: scale(1);}
+        }
+        @keyframes animDialog {
+            from{-webkit-transform: scale(.05);transform: scale(.05);}
+            to{-webkit-transform: scale(1);transform: scale(1);}
+        }
+    </style>
 </head>
 <body onload="loaded()">
     <header class="header">
@@ -56,8 +78,8 @@
                 </div>
                 <p class="form_p_title">现场申请照</p>
                 <div class="action_p_wrap">
-                    <p class="action_p" img-src='/images/material/ap+ID.png'><span class="action_p_txt">申请人手持申请表+身份证原件照片</span><span class="right_arrow"></span></p>
-                    <p class="action_p" img-src='/images/material/credit-authorization+Id.png'><span class="action_p_txt">申请人手持征信查询授权书+身份证原件照片</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/ap-ID.png'><span class="action_p_txt">申请人手持申请表+身份证原件照片</span><span class="right_arrow"></span></p>
+                    <p class="action_p" img-src='/images/material/credit-authorization-ID.png'><span class="action_p_txt">申请人手持征信查询授权书+身份证原件照片</span><span class="right_arrow"></span></p>
                 </div>
                 <p class="form_p_title">辅助资料<span>（如有可提供）</span></p>
                 <div class="action_p_wrap">
@@ -75,8 +97,50 @@
             </form>
         </div>
     </article>
+    <!--示例预览-->
+    <div class="img-swiper-wrap"></div>
     <script>
-        
+        //图片放大
+        $('.action_p_wrap>p').on('click', function () {
+            var imgSrcs = $(this).attr('img-src');
+            var imgSrcArr = imgSrcs.split(';');
+            creatSwiper(imgSrcArr,{clickExit:true});
+        });
+        function creatSwiper(objs,option){
+            var imgSwiperWrap = $('.img-swiper-wrap');
+            var imgSwiper=$('<div id="img-swiper" class="swiper-container"></div>');
+            var swiperWrapper= $('<div class="swiper-wrapper"></div>');
+            var swiperHeader = $('<div class="silde-num"><span class="curr-num"></span>/<span class="silde-sum"></span></div>');
+            var exitBtn = $('<div class="exit-btn"></div>');
+
+            for(var i=0;i<objs.length;i++){
+                var swiperSlide=$('<div class="swiper-slide"></div>');
+                swiperWrapper.append(swiperSlide.append('<img data-src="'+objs[i]+'" src="/images/logo-loading.gif" class="swiper-lazy">'));
+            }
+            imgSwiperWrap.append(imgSwiper.append(swiperWrapper).append(swiperHeader).append(exitBtn));
+
+            var imgSwiper = new Swiper ('.swiper-container', {
+                freeMode : false,
+                lazyLoading : true,
+                onInit: function(swiper){
+                    $('#img-swiper .silde-sum').text(swiper.slides.length);
+                    $('#img-swiper .curr-num').text(swiper.activeIndex+1);
+                },
+                onSlideChangeEnd: function(swiper){
+                    $('#img-swiper .curr-num').text(swiper.activeIndex+1);
+                }
+            });
+            swiperWrapper.on('click',function(eve){
+                if(option&&option.clickExit){
+                    imgSwiperWrap.empty();
+                }else{
+                    exitBtn.toggleClass('exit-btn-show');
+                }
+            });
+            exitBtn.on('click',function(eve){
+                imgSwiperWrap.empty();
+            });
+        }
     </script>
 </body>
 </html>
