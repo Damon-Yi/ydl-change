@@ -237,9 +237,9 @@ input[type="button"]{padding:0;}
 .payment_records .p_item .p_row_2>div{float: left;position: relative;}
 .payment_records .p_item .p_row_2>div:after{content:'';display:block;position: absolute;top:0;right: 0;height: 100%;/*background-color: #b2b2b2;height: 1px;*/transform: scaleX(0.5);-webkit-transform: scaleX(0.5);border-right: 1px solid #b2b2b2;}
 .payment_records .p_item .p_row_2>div:last-child:after{display: none;}
-.payment_records .p_item .p_row_2 .p_col_1{width: 42%;}
-.payment_records .p_item .p_row_2 .p_col_2{width: 33%;}
-.payment_records .p_item .p_row_2 .p_col_3{width: 25%;}
+.payment_records .p_item .p_row_2 .p_col_1{width: 36%;}
+.payment_records .p_item .p_row_2 .p_col_2{width: 30%;}
+.payment_records .p_item .p_row_2 .p_col_3{width: 34%;}
 .loan_records .p_item .p_row_2 .p_col_1{width: 33%;}
 .loan_records .p_item .p_row_2 .p_col_2{width: 33%;}
 .loan_records .p_item .p_row_2 .p_col_3{width: 34%;}
