@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <script src="js/common.js"></script>
+    <style>
+        .result{background: url(images/bg.png) no-repeat center top;background-size: contain;background-color: #fff;color: #fff;text-align: center;}
+        .result_win{background-color: #2e82fc;}
+        .result_fail{background-color: #7b7576;}
+        .r_title{font-size: 0.26rem;margin: 0.4rem auto 0.7rem;}
+        .result .r_win_info{display: none;}
+        .result_win .r_win_info{display: block;}
+        .result .r_fail_info{display: none;}
+        .result_fail .r_fail_info{display: block;}
+        .r_info{}
+        .r_info .r_line1{font-size: 0.25rem;}
+        .r_info .r_line2{font-size: 0.34rem;margin: 0.14rem auto 0.32rem;}
+        .r_cont{background:url(images/cont_bg.png) no-repeat center top;background-size: contain;width: 5.12rem;height:4.82rem;margin: 0 auto;padding-top: 0.42rem;}
+        .r_table{font-size: 0.18rem;color: #424242;margin: 0 auto;}
+        .r_table td{padding:0.02rem 0.2rem;}
+        .r_table .r_user_icon{width:1rem;height: 1rem;border-radius: 100%;}
+        .r_table .r_txt{color: #f05474;font-size: 0.6rem;font-family: 'KaiTi';display: none;}
+        .result_win .r_win_txt{display: block;}
+        .result_fail .r_fail_txt{display: block;}
+        .r_table .r_name{font-size: 0.25rem;}
+        .r_table .r_num{}
+
+        .r_sub_table{font-size: 0.25rem;color: #6d6e6f;margin: 0.3rem auto 0;}
+        .r_sub_table td{height: 0.58rem;border-top: 1px solid #c8d8e2; }
+        .r_sub_table img{vertical-align: middle;}
+        .r_sub_table .li_1{width: 0.28rem;height: 0.28rem;}
+        .r_sub_table .li_2{width: 0.28rem;height: 0.35rem;}
+        .r_sub_table .li_3{width: 0.3rem;height: 0.38rem;}
+        .r_sub_table .r_sub_txt{margin: 0 0.1rem;}
+        .r_sub_table .li_txt_1{color: #f05474;}
+        .r_sub_table .li_txt_2{color: #2e82fc;}
+        .r_sub_table .li_txt_2{color: #f05474;}
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article id="body_wrapper" class="result result_fail">
+        <div>
+            <p class="r_title">挑战结果</p>
+            <div class="r_info r_win_info">
+                <p class="r_line1">恭喜您</p>
+                <p class="r_line2">获得本次胜利</p>
+            </div>
+            <div class="r_info r_fail_info">
+                <p class="r_line1">很遗憾</p>
+                <p class="r_line2">本次比赛获败</p>
+            </div>
+            <div class="r_cont">
+                <table class="r_table">
+                    <tr>
+                        <td><img class="r_user_icon" src="images/u_1.png" alt=""></td>
+                        <td><span class="r_txt r_win_txt">胜</span><span class="r_txt r_fail_txt">败</span></td>
+                        <td><img class="r_user_icon" src="images/u_2.png" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><span class="r_name">王灿灿</span></td>
+                        <td></td>
+                        <td><span class="r_name">Ander</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="r_num">400万</span></td>
+                        <td></td>
+                        <td><span class="r_num">400万</span></td>
+                    </tr>
+                </table>
+                <table class="r_sub_table">
+                    <tr>
+                        <td><img class="li_1" src="images/li_1.png" alt=""> </td>
+                        <td><span class="r_sub_txt">金币</span></td>
+                        <td><span class="li_txt_1">300</span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="li_2" src="images/li_2.png" alt=""> </td>
+                        <td><span class="r_sub_txt">威望</span></td>
+                        <td><span class="li_txt_2">200</span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="li_3" src="images/li_3.png" alt=""> </td>
+                        <td><span class="r_sub_txt">威望</span></td>
+                        <td><span class="li_txt_3"></span></td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </article>
+    <script>
+        
+    </script>
+</body>
+</html>

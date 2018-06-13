@@ -125,6 +125,7 @@
               // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
               var event = $.Event('tap')
               event.cancelTouch = cancelAll
+              console.log(touch.el);
               touch.el.trigger(event)
 
               // trigger double tap immediately
